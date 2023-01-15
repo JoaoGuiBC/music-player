@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0F0D13;
+}
+
+body * {
+  font-family: 'Roboto', sans-serif;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-areas: 
+  'A B'
+  'A C';
+  
+  gap: 2rem;
+  place-content: center;
+
+  height: 100vh;
+}
+
+/* player 1 */
+#player-1 {
+  grid-area: A;
+
+  width: fit-content;
+  padding: 3rem 2.5rem;
+}
+
+#player-1 img {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+
+  border-radius: 6px;
+}
+
+#player-1 .wrapper {
+  width: 12rem;
+}
+
+#player-1 .info {
+  margin-top: 1.75rem;
+}
+
+/* player 2 */
+#player-2 {
+  grid-area: B;
+  height: fit-content;
+}
+
+/* player 3 */
+#player-3 {
+  grid-area: C;
+}
+
+/*all players*/
+.player {
+  padding: 1.75rem;
+
+  border-radius: 10px;
+  background-color: #2A2141;
+}
+
+.player img {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+
+  border-radius: 6px;
+}
+
+.info-wrapper {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.info {
+  color: #E1E1E6;
+}
+
+.info h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.info p {
+  opacity: 0.67;
+  font-size: 1.2rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+
+  width: 190px;
+  margin: 1.75rem auto 0;
+}
+
+.controls button {
+  border: none;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+}
+
+.controls button img {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.track {
+  position: relative;
+  margin-top: 1.75rem;
+}
+
+.track::before {
+  content: '';
+
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 6px;
+
+  background: #D9D9D9;
+  opacity: 0.3;
+  border-radius: 9px;
+}
+
+.track::after {
+  content: '';
+
+  display: block;
+  width: 0%;
+  height: 6px;
+
+  background: #D9D9D9;
+  opacity: 1;
+  border-radius: 9px;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 0.5rem;
+
+  opacity: 0.7;
+  color: #C4C4CC;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 700px) {
+
+  #app {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 17rem;
+    height: fit-content;
+    
+    margin: auto;
+    padding: 2rem 0;
+  }
+}
